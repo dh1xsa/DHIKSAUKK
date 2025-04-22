@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-                "Facility Hotel",
+                "Hotel Hebat",
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold

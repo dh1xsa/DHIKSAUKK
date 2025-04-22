@@ -54,6 +54,12 @@ class MyDrawer extends StatelessWidget {
               }
           ),
 
+          MyDrawerTile(
+              text: "F A C I L I T Y",
+              icon: Iconsax.building,
+              onTap: () {}
+          ),
+
           const SizedBox(height: 350),
 
           MyDrawerTile(

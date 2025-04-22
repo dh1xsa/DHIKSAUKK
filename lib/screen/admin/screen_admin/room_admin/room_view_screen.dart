@@ -1,11 +1,11 @@
-import 'package:coba1/screen/admin/screen_admin/room_add.dart';
+import 'package:coba1/screen/admin/screen_admin/room_admin/room_add.dart';
 import 'package:coba1/screen/admin/widget_admin/drawer_admin.dart';
 import 'package:coba1/screen/admin/widget_admin/roomcard.dart';
 import 'package:flutter/material.dart';
 import 'package:coba1/color.dart';
 import 'package:coba1/widget/my_button.dart';
 import 'package:coba1/widget/custom_appbar.dart';
-import 'package:coba1/screen/admin/screen_admin/edit_room.dart';
+import 'package:coba1/screen/admin/screen_admin/room_admin/edit_room.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class RoomViewScreen extends StatefulWidget {

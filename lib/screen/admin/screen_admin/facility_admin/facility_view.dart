@@ -1,5 +1,5 @@
-import 'package:coba1/screen/admin/screen_admin/edit_facility.dart';
-import 'package:coba1/screen/admin/screen_admin/facility_add.dart';
+import 'package:coba1/screen/admin/screen_admin/facility_admin/edit_facility.dart';
+import 'package:coba1/screen/admin/screen_admin/facility_admin/facility_add.dart';
 import 'package:coba1/screen/admin/widget_admin/drawer_admin.dart';
 import 'package:coba1/screen/admin/widget_admin/facilityhotelcard.dart';
 import 'package:flutter/material.dart';

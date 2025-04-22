@@ -1,13 +1,12 @@
 import 'package:coba1/color.dart';
 import 'package:coba1/screen/Home/home_screen.dart';
+import 'package:coba1/screen/admin/screen_admin/room_admin/room_view_screen.dart';
 import 'package:coba1/screen/register_screen.dart';
 import 'package:coba1/screen/resepsionis/resep_screen.dart';
 import 'package:coba1/widget/my_button.dart';
 import 'package:coba1/widget/my_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-
-import 'admin/screen_admin/room_view_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);

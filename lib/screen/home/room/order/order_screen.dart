@@ -28,7 +28,13 @@ class _HotelOrderFormPageState extends State<HotelOrderFormPage> {
   void initState() {
     super.initState();
     selectedRoomType = widget.selectedRoomType;
+
+    final user = Supabase.instance.client.auth.currentUser;
+    if (user != null) {
+      emailController.text = user.email ?? '';
+    }
   }
+
 
   Future<void> _selectCheckInDate(BuildContext context) async {
     DateTime? picked = await showDatePicker(

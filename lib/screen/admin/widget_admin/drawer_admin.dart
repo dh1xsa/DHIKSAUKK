@@ -1,10 +1,10 @@
 import 'package:coba1/color.dart';
-import 'package:coba1/screen/admin/screen_admin/facility_view.dart';
+import 'package:coba1/screen/admin/screen_admin/facility_admin/facility_view.dart';
+import 'package:coba1/screen/admin/screen_admin/room_admin/room_view_screen.dart';
 import 'package:coba1/screen/login_screen.dart';
 import 'package:coba1/widget/my_drawer_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import '../screen_admin/room_view_screen.dart';
 
 class MyDrawerAdmin extends StatelessWidget {
   const MyDrawerAdmin({super.key});
