@@ -96,6 +96,13 @@ class _HotelOrderFormPageState extends State<HotelOrderFormPage> {
       return;
     }
 
+    if (!name.contains(' ')) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please enter full name with space')),
+      );
+      return;
+    }
+
     try {
       final supabase = Supabase.instance.client;
       final DateFormat dateFormat = DateFormat('dd/MM/yyyy');

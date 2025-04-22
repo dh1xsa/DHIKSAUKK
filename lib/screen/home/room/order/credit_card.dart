@@ -65,7 +65,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
               ),
               TextButton(
                 onPressed: () {
-                  Navigator.pop(context); // tutup dialog
+                  Navigator.pop(context);
                   Navigator.push(
                     context,
                     MaterialPageRoute(

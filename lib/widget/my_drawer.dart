@@ -1,5 +1,6 @@
 import 'package:coba1/color.dart';
 import 'package:coba1/screen/Home/home_screen.dart';
+import 'package:coba1/screen/home/facility/facilities_screen_user.dart';
 import 'package:coba1/screen/home/room/room_screen.dart';
 import 'package:coba1/screen/login_screen.dart';
 import 'package:coba1/widget/my_drawer_tile.dart';
@@ -57,7 +58,13 @@ class MyDrawer extends StatelessWidget {
           MyDrawerTile(
               text: "F A C I L I T Y",
               icon: Iconsax.building,
-              onTap: () {}
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FacilityScreen()),
+                );
+              }
           ),
 
           const SizedBox(height: 350),
