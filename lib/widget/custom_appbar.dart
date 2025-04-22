@@ -25,17 +25,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             borderRadius: BorderRadius.circular(15),
             border: Border.all(color: Colors.black12),
           ),
-          child: Stack(
-            children: [
-              Icon(Iconsax.notification, color: Colors.black, size: 30),
-              Positioned(
-                  top: 5,
-                  right: 5,
-                  child: CircleAvatar(radius: 5, backgroundColor: Colors.red),
-              )
-            ],
-          ),
-        )
+        ),
       ],
     );
   }

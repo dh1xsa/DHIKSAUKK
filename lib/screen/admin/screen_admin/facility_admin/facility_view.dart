@@ -38,7 +38,7 @@ class _FacilityViewScreenState extends State<FacilityViewScreen> {
     } catch (e) {
       setState(() => _isLoading = false);
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Gagal mengambil data fasilitas: $e')),
+        SnackBar(content: Text('Failed to retrieve facility data: $e')),
       );
     }
   }
@@ -46,20 +46,48 @@ class _FacilityViewScreenState extends State<FacilityViewScreen> {
   Future<void> _deleteFacility(int index) async {
     final facilityId = facilities[index]['id'];
 
-    try {
-      await Supabase.instance.client
-          .from('facility')
-          .delete()
-          .eq('id', facilityId);
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text("Confirm Delete"),
+          content: const Text("Are you sure you want to delete this feature?"),
+          actions: <Widget>[
+            TextButton(
+              child: const Text("Cancel"),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              child: const Text("Delete"),
+              onPressed: () async {
+                Navigator.of(context).pop(); // Close the dialog
 
-      setState(() {
-        facilities.removeAt(index);
-      });
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Gagal menghapus fasilitas: $e')),
-      );
-    }
+                try {
+                  await Supabase.instance.client
+                      .from('facility')
+                      .delete()
+                      .eq('id', facilityId);
+
+                  setState(() {
+                    facilities.removeAt(index);
+                  });
+
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Facility successfully deleted')),
+                  );
+                } catch (e) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Failed to delete facility: $e')),
+                  );
+                }
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   void _editFacility(Map<String, dynamic> facility) {
@@ -67,7 +95,7 @@ class _FacilityViewScreenState extends State<FacilityViewScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => UpdateFacilityScreen(facilityId: facilityId)
+          builder: (context) => UpdateFacilityScreen(facilityId: facilityId)
       ),
     ).then((_) => _fetchFacilities());
   }

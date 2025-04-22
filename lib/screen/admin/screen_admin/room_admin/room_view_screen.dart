@@ -47,20 +47,48 @@ class _RoomViewScreenState extends State<RoomViewScreen> {
   Future<void> _deleteRoom(int index) async {
     final roomId = rooms[index]['id'];
 
-    try {
-      await Supabase.instance.client
-          .from('rooms')
-          .delete()
-          .eq('id', roomId);
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text("Confirm Delete"),
+          content: const Text("Are you sure you want to delete this Room?"),
+          actions: <Widget>[
+            TextButton(
+              child: const Text("Cancel"),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              child: const Text("Delete"),
+              onPressed: () async {
+                Navigator.of(context).pop();
 
-      setState(() {
-        rooms.removeAt(index);
-      });
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Failed to delete room: $e')),
-      );
-    }
+                try {
+                  await Supabase.instance.client
+                      .from('rooms')
+                      .delete()
+                      .eq('id', roomId);
+
+                  setState(() {
+                    rooms.removeAt(index);
+                  });
+
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Rooms successfully deleted')),
+                  );
+                } catch (e) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Failed to delete Rooms: $e')),
+                  );
+                }
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   void _editRoom(int index) {

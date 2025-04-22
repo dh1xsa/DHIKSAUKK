@@ -126,6 +126,7 @@ class _AddRoomScreenState extends State<AddRoomScreen> {
                 controller: _facilitiesController,
                 hintText: 'Facilities (separate with commas)',
                 obscureText: false,
+                maxLines: 5,
                 validator: (val) => val == null || val.isEmpty ? 'Required fields' : null,
               ),
               const SizedBox(height: 24),

@@ -91,6 +91,7 @@ class _AddFacilityScreenState extends State<AddFacilityScreen> {
                 controller: _descriptionController,
                 hintText: 'Description Fasilitas',
                 obscureText: false,
+                maxLines: 5,
                 validator: (val) => val == null || val.isEmpty ? 'Required fields' : null,
               ),
               const SizedBox(height: 24),

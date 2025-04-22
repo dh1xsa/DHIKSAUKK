@@ -103,20 +103,6 @@ class LoginScreen extends StatefulWidget {
                     obscureText: true,
                 ),
 
-                const SizedBox(height: 25),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        'Forget Password?',
-                        style: TextStyle(color: Colors.grey[600]),
-                      ),
-                    ],
-                  ),
-                ),
-
                 const SizedBox(height: 70),
                 MyButton(
                     onTap: _login,

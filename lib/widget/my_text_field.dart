@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // Import for TextInputFormatter
+import 'package:flutter/services.dart';
 
 class MyTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -9,7 +9,8 @@ class MyTextField extends StatelessWidget {
   final String? Function(String?)? validator;
   final TextInputType keyboardType;
   final int maxLines;
-  final List<TextInputFormatter>? inputFormatters; // Add inputFormatters parameter
+  final List<TextInputFormatter>? inputFormatters;
+  final bool enabled;
 
   const MyTextField({
     super.key,
@@ -20,7 +21,8 @@ class MyTextField extends StatelessWidget {
     this.validator,
     this.keyboardType = TextInputType.text,
     this.maxLines = 1,
-    this.inputFormatters, // Initialize inputFormatters
+    this.inputFormatters,
+    this.enabled = true,
   });
 
   @override
@@ -33,9 +35,16 @@ class MyTextField extends StatelessWidget {
         keyboardType: keyboardType,
         maxLines: maxLines,
         validator: validator,
-        inputFormatters: inputFormatters, 
+        inputFormatters: inputFormatters,
+        enabled: enabled,
         decoration: InputDecoration(
           focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.black),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.black),
+          ),
+          disabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.black),
           ),
           fillColor: Colors.grey.shade200,

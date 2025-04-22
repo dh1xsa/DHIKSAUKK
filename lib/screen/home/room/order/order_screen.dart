@@ -231,6 +231,7 @@ class _HotelOrderFormPageState extends State<HotelOrderFormPage> {
               controller: emailController,
               hintText: 'Email',
               obscureText: false,
+              enabled: false,
             ),
 
             const SizedBox(height: 15),

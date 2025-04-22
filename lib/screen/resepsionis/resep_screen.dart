@@ -68,6 +68,8 @@ class _ResepsionisScreenState extends State<ResepsionisScreen> {
           appBar: _buildAppBar(context),
           body: isLoading
               ? const Center(child: CircularProgressIndicator())
+              : pesanan.isEmpty
+              ? const Center(child: Text("There is no pesanan data yet."))
               : RefreshIndicator(
             onRefresh: fetchPesanan,
             child: ListView.builder(
@@ -127,7 +129,6 @@ class _ResepsionisScreenState extends State<ResepsionisScreen> {
             borderRadius: BorderRadius.circular(10),
             border: Border.all(color: Colors.black12),
           ),
-          child: const Icon(Icons.bookmark_outline, size: 30),
         ),
         const SizedBox(width: 10),
       ],
