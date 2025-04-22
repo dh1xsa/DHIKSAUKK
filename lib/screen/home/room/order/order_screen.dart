@@ -224,6 +224,7 @@ class _HotelOrderFormPageState extends State<HotelOrderFormPage> {
               hintText: 'Full Name',
               obscureText: false,
             ),
+
             const SizedBox(height: 15),
             buildLabel("Email"),
             MyTextField(
@@ -231,6 +232,7 @@ class _HotelOrderFormPageState extends State<HotelOrderFormPage> {
               hintText: 'Email',
               obscureText: false,
             ),
+
             const SizedBox(height: 15),
             buildLabel("Phone Number"),
             MyTextField(
@@ -238,6 +240,7 @@ class _HotelOrderFormPageState extends State<HotelOrderFormPage> {
               hintText: 'Phone Number',
               obscureText: false,
             ),
+
             const SizedBox(height: 15),
             buildLabel("Room Type"),
             MyTextField(
@@ -245,6 +248,7 @@ class _HotelOrderFormPageState extends State<HotelOrderFormPage> {
               hintText: selectedRoomType ?? 'Select Room Type',
               obscureText: false,
             ),
+
             const SizedBox(height: 25),
             buildLabel("Check-In Date"),
             GestureDetector(
@@ -258,6 +262,7 @@ class _HotelOrderFormPageState extends State<HotelOrderFormPage> {
                 ),
               ),
             ),
+
             const SizedBox(height: 10),
             buildLabel("Check-Out Date"),
             GestureDetector(
@@ -271,6 +276,7 @@ class _HotelOrderFormPageState extends State<HotelOrderFormPage> {
                 ),
               ),
             ),
+
             const SizedBox(height: 25),
             MyButton(text: 'Order Now', onTap: submitOrder),
           ],
